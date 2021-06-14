@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/bookmark'
 
 class MyApp < Sinatra::Base
   configure :development do
@@ -8,6 +9,11 @@ class MyApp < Sinatra::Base
   
   get '/' do
     'Hello World!'
+  end
+
+  get '/bookmarks' do
+    @bookmarks = Bookmark.all
+    erb :'bookmarks/index'
   end
 
   # start the server if ruby file executed directly
