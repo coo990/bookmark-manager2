@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/bookmark'
+require_relative './lib/bookmark'
 
 class MyApp < Sinatra::Base
   configure :development do
@@ -8,12 +8,12 @@ class MyApp < Sinatra::Base
   end
   
   get '/' do
-    'Hello World!'
+    'Bookmark Manager'
   end
 
   get '/bookmarks' do
     @bookmarks = Bookmark.all
-    erb :index
+    erb :"bookmarks/index"
   end
 
   get '/bookmarks/new' do

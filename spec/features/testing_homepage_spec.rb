@@ -1,6 +1,6 @@
 feature 'testing homepage' do
-  scenario 'hello world' do
+  scenario 'seeing bookmark manager' do
     visit '/'
-    expect(page).to have_content "Hello World!"
+    expect(page).to have_content "Bookmark Manager"
   end
 end
