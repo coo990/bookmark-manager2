@@ -1,4 +1,2 @@
-require 'rubygems'
-require File.join(File.dirname(__FILE__), 'my_app.rb')
-
+require '.my_app'
 run MyApp
